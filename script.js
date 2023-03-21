@@ -27,7 +27,8 @@ function longitud(){
 }
 
 // longitud();
-// console.log(long);
+console.log(long);
+console.log(options)
 
 function criteria(){
   let first = confirm("Do you want numbers in your password?");
@@ -55,6 +56,30 @@ function criteria(){
     options[3]=false
   }
 }
-
-criteria();
+criteria()
 console.log(options)
+console.log(passwd)
+
+if(options[0]){
+  var passwd = passwd.concat(num);
+}
+if(options[1]){
+  var passwd = passwd.concat(lower);
+}
+if(options[2]){
+  var passwd = passwd.concat(upper);
+}
+if(options[3]){
+  var passwd = passwd.concat(special);
+}
+console.log(passwd)
+
+
+
+
+
+
+
+
+
+
