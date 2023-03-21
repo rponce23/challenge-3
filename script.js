@@ -5,8 +5,9 @@ var num = [0,1,2,3,4,5,6,7,8,9];
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upper = lower.map(element => element.toUpperCase());
 var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "/", "?", "[", "]", "{", "}", ":", ";", "<", ">", "*", "+", "=", "~"];
-var options = [false, false, false, false];
-var passwd = []
+var choose = [false, false, false, false];
+var options = []
+var password = []
 
 // Define functions
 
@@ -26,54 +27,60 @@ function longitud(){
   }
 }
 
-// longitud();
-console.log(long);
-console.log(options)
-
 function criteria(){
   let first = confirm("Do you want numbers in your password?");
   if(first){
-    options[0]=true;
+    choose[0]=true;
   }else{
-    options[0]=false
+    choose[0]=false
   }
   let second = confirm("Do you want Lowercase characters in your password?");
   if(second){
-    options[1]=true;
+    choose[1]=true;
   }else{
-    options[1]=false
+    choose[1]=false
   }
   let third = confirm("Do you want Uppercase characters in your password?");
   if(third){
-    options[2]=true;
+    choose[2]=true;
   }else{
-    options[2]=false
+    choose[2]=false
   }
   let fourth = confirm("Do you want special characters in your password?");
   if(fourth){
-    options[3]=true;
+    choose[3]=true;
   }else{
-    options[3]=false
+    choose[3]=false
   }
 }
-criteria()
+
+longitud();
+criteria();
+
+if(choose[0]){
+  var options = options.concat(num);
+}
+if(choose[1]){
+  var options = options.concat(lower);
+}
+if(choose[2]){
+  var options = options.concat(upper);
+}
+if(choose[3]){
+  var options = options.concat(special);
+}
+
 console.log(options)
-console.log(passwd)
 
-if(options[0]){
-  var passwd = passwd.concat(num);
-}
-if(options[1]){
-  var passwd = passwd.concat(lower);
-}
-if(options[2]){
-  var passwd = passwd.concat(upper);
-}
-if(options[3]){
-  var passwd = passwd.concat(special);
-}
-console.log(passwd)
 
+for(var i = 0; i < long; i++){
+  var contra = options[Math.floor(Math.random()*options.length)];
+  password.push(contra);
+}
+
+
+
+console.log(password)
 
 
 
