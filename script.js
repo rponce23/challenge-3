@@ -1,9 +1,14 @@
 // Define variables 
 
 var long = 0;
-var num = []
-var lower = []
-var upper = []
+var num = [0,1,2,3,4,5,6,7,8,9];
+var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upper = lower.map(element => element.toUpperCase());
+var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "/", "?", "[", "]", "{", "}", ":", ";", "<", ">", "*", "+", "=", "~"];
+var options = [false, false, false, false];
+var passwd = []
+
+// Define functions
 
 function longitud(){
   let lan = prompt('Which is lenght of the password? (min:8 - max: 128)');
@@ -21,5 +26,35 @@ function longitud(){
   }
 }
 
-longitud();
-console.log(long);
+// longitud();
+// console.log(long);
+
+function criteria(){
+  let first = confirm("Do you want numbers in your password?");
+  if(first){
+    options[0]=true;
+  }else{
+    options[0]=false
+  }
+  let second = confirm("Do you want Lowercase characters in your password?");
+  if(second){
+    options[1]=true;
+  }else{
+    options[1]=false
+  }
+  let third = confirm("Do you want Uppercase characters in your password?");
+  if(third){
+    options[2]=true;
+  }else{
+    options[2]=false
+  }
+  let fourth = confirm("Do you want special characters in your password?");
+  if(fourth){
+    options[3]=true;
+  }else{
+    options[3]=false
+  }
+}
+
+criteria();
+console.log(options)
