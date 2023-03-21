@@ -54,33 +54,49 @@ function criteria(){
   }
 }
 
-longitud();
-criteria();
+function validate(){
+  if(choose[0]==false && choose[1]==false && choose[2]==false && choose[3]==false){
+    window.alert("You have to choose at last one criteria!")
+    criteria();
+  }
 
-if(choose[0]){
-  var options = options.concat(num);
-}
-if(choose[1]){
-  var options = options.concat(lower);
-}
-if(choose[2]){
-  var options = options.concat(upper);
-}
-if(choose[3]){
-  var options = options.concat(special);
 }
 
-console.log(options)
-
-
-for(var i = 0; i < long; i++){
-  var contra = options[Math.floor(Math.random()*options.length)];
-  password.push(contra);
+function create(){
+  if(choose[0]){
+    options = options.concat(num);
+  }
+  if(choose[1]){
+    options = options.concat(lower);
+  }
+  if(choose[2]){
+    options = options.concat(upper);
+  }
+  if(choose[3]){
+    options = options.concat(special);
+  }
 }
 
 
 
-console.log(password)
+function generatePassword(){
+  longitud();
+  criteria();
+  validate();
+  create();
+
+  var password = []
+  for(var i = 0; i < long; i++){
+    var contra = options[Math.floor(Math.random()*options.length)];
+    password.push(contra);
+  }
+
+  console.log(password)
+}
+
+generatePassword()
+
+
 
 
 
