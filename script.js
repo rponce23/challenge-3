@@ -1,5 +1,5 @@
-// Define variables 
 
+// Define variables 
 var long = 0;
 var num = [0,1,2,3,4,5,6,7,8,9];
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -56,7 +56,7 @@ function criteria(){
 
 function validate(){
   if(choose[0]==false && choose[1]==false && choose[2]==false && choose[3]==false){
-    window.alert("You have to choose at last one criteria!")
+    window.alert("You have to choose at least one criteria!")
     criteria();
   }
 
@@ -77,7 +77,7 @@ function create(){
   }
 }
 
-
+// Define master function
 
 function generatePassword(){
   longitud();
@@ -91,10 +91,32 @@ function generatePassword(){
     password.push(contra);
   }
 
-  console.log(password)
+  var passwordString=password.join("");
+
+  console.log(passwordString);
+
+  return passwordString;
 }
 
-generatePassword()
+// generatePassword();
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  console.log("prueba ", password);
+  var passwordText = document.querySelector("#password");
+  console.log("prueba2 ", passwordText);
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 
 
 
