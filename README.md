@@ -7,6 +7,8 @@ This is the Third Challenge in which I generated in Javascript a password genera
 I did it applying a function to each process to generate the password according to the criteria.
 I learnt how to apply a button to run a JS program and how to display a result in a specific area on the page.
 
+![Javascript code](/script.js)
+
 ## Installation
 
 N/A
