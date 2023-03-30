@@ -63,6 +63,7 @@ function validate(){
 }
 
 function create(){
+  options = [];
   if(choose[0]){
     options = options.concat(num);
   }
